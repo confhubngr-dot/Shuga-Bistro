@@ -1,0 +1,763 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuga Bistro by Gracei — Order suya in Lagos</title>
+<meta name="description" content="Charcoal-grilled beef, ram, chicken and kilishi. Order in two minutes, delivered hot anywhere in Lagos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --char:#140C08;
+  --smoke:#241812;
+  --ash:#3D2C21;
+  --ember:#F0531C;
+  --chilli:#B01806;
+  --kuli:#F0B64B;
+  --wrap:#EADCC0;
+  --wrapd:#CDB48A;
+  --ink:#2A1A10;
+  --cream:#F6F0E4;
+  --muted:#B49B87;
+
+  --display:'Bricolage Grotesque','Archivo Black','Helvetica Neue',Arial,sans-serif;
+  --body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'Martian Mono','Courier New',monospace;
+
+  --pad:clamp(20px,5vw,64px);
+  --r:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--char);
+  color:var(--cream);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:132px;
+}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kuli);outline-offset:3px;border-radius:4px}
+
+.wrapper{max-width:1120px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--kuli);
+  margin:0;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-top:20px;padding-bottom:20px;
+  border-bottom:1px solid var(--ash);
+  position:relative;z-index:3;
+}
+.mark{display:flex;align-items:center;gap:11px}
+.mark svg{flex:none}
+.mark b{
+  font-family:var(--display);font-weight:800;font-size:19px;
+  letter-spacing:-.02em;line-height:1;display:block;
+}
+.mark span{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.open-now{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 0 rgba(240,83,28,.6);animation:pulse 2.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(240,83,28,0)}100%{box-shadow:0 0 0 0 rgba(240,83,28,0)}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:50%;bottom:-42%;transform:translateX(-50%);
+  width:min(1200px,150%);height:120%;
+  background:radial-gradient(ellipse at 50% 100%,rgba(240,83,28,.42) 0%,rgba(176,24,6,.20) 34%,rgba(20,12,8,0) 68%);
+  animation:breathe 7s ease-in-out infinite;pointer-events:none;
+}
+@keyframes breathe{0%,100%{opacity:.75}50%{opacity:1}}
+.hero-inner{position:relative;z-index:2;padding:clamp(48px,9vw,104px) 0 clamp(56px,8vw,96px)}
+.hero h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(42px,8.4vw,88px);line-height:.94;letter-spacing:-.035em;
+  margin:20px 0 0;max-width:15ch;
+}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero p.lede{
+  font-size:clamp(16px,2.1vw,19px);color:#DCC9B6;max-width:46ch;margin:22px 0 0;
+}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:8px 16px;margin:26px 0 0;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+.hero-facts span{display:flex;align-items:center;gap:16px}
+.hero-facts span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--ash)}
+.hero-facts span:last-child::after{display:none}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--body);font-weight:600;font-size:15px;
+  padding:14px 24px;border-radius:999px;border:1px solid transparent;
+  background:var(--ember);color:#fff;cursor:pointer;text-decoration:none;
+  transition:transform .12s ease,background .18s ease,border-color .18s ease;
+}
+.btn:hover{background:#FF6630;transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{background:transparent;border-color:var(--ash);color:var(--cream)}
+.btn.ghost:hover{border-color:var(--kuli);background:rgba(240,182,75,.07)}
+.btn[disabled]{opacity:.42;cursor:not-allowed;transform:none;background:var(--ash);color:#CDB9A6}
+.btn.wa{background:#1FA855}
+.btn.wa:hover{background:#25C264}
+
+/* ---------- sections ---------- */
+.step{padding:clamp(44px,7vw,76px) 0;border-top:1px solid var(--ash)}
+.step-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.step-num{font-family:var(--mono);font-size:12px;color:var(--ember);font-weight:600}
+.step h2{
+  font-family:var(--display);font-weight:800;font-size:clamp(26px,4.2vw,40px);
+  letter-spacing:-.03em;line-height:1;margin:0;
+}
+.step-note{color:var(--muted);margin:0 0 26px;max-width:52ch;font-size:15px}
+
+/* ---------- menu cards ---------- */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:14px}
+.card{
+  position:relative;border-radius:var(--r);padding:18px 18px 16px;
+  background:
+    repeating-radial-gradient(circle at 18% 22%,rgba(120,86,44,.055) 0 1px,rgba(0,0,0,0) 1px 4px),
+    linear-gradient(168deg,var(--wrap) 0%,#E1D0AE 100%);
+  color:var(--ink);
+  border:1px solid var(--wrapd);
+  box-shadow:0 10px 24px -18px #000;
+  display:flex;flex-direction:column;gap:6px;
+}
+.card h3{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;margin:0;line-height:1.1}
+.card .desc{font-size:13.5px;line-height:1.45;color:#6B513C;margin:0;flex:1}
+.card .tag{
+  position:absolute;top:14px;right:14px;
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--chilli);color:#fff;padding:4px 7px;border-radius:4px;
+}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.price{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--ink)}
+.price small{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#8A6D55;font-weight:400}
+
+.stepper{display:flex;align-items:center;gap:2px;background:#DFCCA8;border:1px solid var(--wrapd);border-radius:999px;padding:3px}
+.stepper button{
+  width:32px;height:32px;border-radius:50%;border:0;cursor:pointer;
+  background:transparent;color:var(--ink);font-size:19px;line-height:1;font-family:var(--body);
+  display:grid;place-items:center;transition:background .15s ease;
+}
+.stepper button:hover{background:rgba(42,26,16,.12)}
+.stepper .qty{min-width:26px;text-align:center;font-family:var(--mono);font-size:13px;font-weight:600}
+.add-btn{
+  border:0;border-radius:999px;padding:10px 18px;cursor:pointer;
+  background:var(--ink);color:var(--wrap);font-family:var(--body);font-weight:600;font-size:14px;
+  transition:background .15s ease;
+}
+.add-btn:hover{background:var(--chilli)}
+
+/* ---------- chips (sides & drinks) ---------- */
+.chip-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  display:flex;align-items:center;gap:11px;
+  border:1px solid var(--ash);background:var(--smoke);color:var(--cream);
+  border-radius:999px;padding:9px 9px 9px 17px;cursor:pointer;
+  font-size:14.5px;font-family:var(--body);transition:border-color .15s ease,background .15s ease;
+}
+.chip:hover{border-color:var(--kuli)}
+.chip .c-price{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.chip .c-add{
+  width:26px;height:26px;border-radius:50%;background:var(--ash);color:var(--cream);
+  display:grid;place-items:center;font-size:16px;line-height:1;
+}
+.chip[data-on="true"]{background:rgba(240,83,28,.14);border-color:var(--ember)}
+.chip[data-on="true"] .c-add{background:var(--ember);color:#fff;font-family:var(--mono);font-size:11px;font-weight:600}
+
+/* ---------- yaji heat ---------- */
+.heat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.heat{
+  text-align:left;cursor:pointer;border-radius:var(--r);padding:16px;
+  background:var(--smoke);border:1px solid var(--ash);color:var(--cream);
+  font-family:var(--body);transition:border-color .15s ease,background .15s ease;
+}
+.heat:hover{border-color:var(--muted)}
+.heat[aria-checked="true"]{border-color:var(--ember);background:rgba(240,83,28,.11)}
+.heat b{display:block;font-family:var(--display);font-weight:800;font-size:16.5px;letter-spacing:-.01em;margin-bottom:3px}
+.heat small{display:block;color:var(--muted);font-size:12.5px;line-height:1.4}
+.pips{display:flex;gap:5px;margin-bottom:11px}
+.pips i{width:9px;height:9px;border-radius:50%;background:var(--ash);display:block}
+.pips i.on{background:var(--ember)}
+
+/* ---------- form ---------- */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{
+  font-family:var(--body);font-size:15.5px;color:var(--cream);
+  background:var(--smoke);border:1px solid var(--ash);border-radius:10px;
+  padding:13px 14px;width:100%;transition:border-color .15s ease;
+}
+input::placeholder,textarea::placeholder{color:#7A6555}
+input:hover,select:hover,textarea:hover{border-color:var(--muted)}
+textarea{resize:vertical;min-height:84px}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 22px,calc(100% - 14px) 22px;background-size:5px 5px;background-repeat:no-repeat}
+
+.toggle{display:inline-flex;background:var(--smoke);border:1px solid var(--ash);border-radius:999px;padding:4px;margin-bottom:22px}
+.toggle button{
+  border:0;background:transparent;color:var(--muted);cursor:pointer;
+  padding:9px 20px;border-radius:999px;font-family:var(--body);font-weight:600;font-size:14.5px;
+  transition:background .15s ease,color .15s ease;
+}
+.toggle button[aria-pressed="true"]{background:var(--ember);color:#fff}
+
+.hint{font-size:13px;color:var(--muted);margin:10px 0 0}
+.error{color:#FF8B6B;font-size:13.5px;margin:12px 0 0;display:none}
+.error[data-show="true"]{display:block}
+
+/* ---------- receipt ---------- */
+.receipt{
+  background:
+    repeating-radial-gradient(circle at 30% 40%,rgba(120,86,44,.05) 0 1px,rgba(0,0,0,0) 1px 4px),
+    linear-gradient(170deg,var(--wrap),#E2D2B2);
+  color:var(--ink);border-radius:var(--r);border:1px solid var(--wrapd);
+  padding:22px;max-width:520px;
+}
+.receipt h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0 0 14px;letter-spacing:-.01em}
+.r-line{display:flex;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:12.5px;padding:6px 0;border-bottom:1px dashed rgba(42,26,16,.18)}
+.r-line span:first-child{font-family:var(--body);font-size:14px}
+.r-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.02em}
+.r-empty{font-size:14px;color:#6B513C;margin:0}
+.pay-note{font-size:13px;color:var(--muted);margin:16px 0 0;max-width:44ch}
+
+/* ---------- signature: the skewer cart ---------- */
+.skewer-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:linear-gradient(180deg,rgba(20,12,8,.86),var(--char) 42%);
+  backdrop-filter:blur(12px);
+  border-top:1px solid var(--ash);
+}
+.skewer-inner{
+  max-width:1120px;margin:0 auto;padding:12px var(--pad) 14px;
+  display:flex;align-items:center;gap:18px;
+}
+.skewer-zone{flex:1;min-width:0}
+.skewer-label{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 7px;
+}
+.rod{position:relative;height:46px;display:flex;align-items:center}
+.rod::before{
+  content:"";position:absolute;left:0;right:0;top:50%;height:7px;transform:translateY(-50%);
+  border-radius:99px;
+  background:linear-gradient(180deg,#A87B4C,#6E4A29 55%,#4A3018);
+  box-shadow:inset 0 1px 0 rgba(255,220,170,.35);
+}
+.rod::after{
+  content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);
+  border-left:11px solid #4A3018;border-top:5px solid transparent;border-bottom:5px solid transparent;
+}
+.chunks{position:relative;display:flex;align-items:center;gap:9px;padding:0 16px 0 4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;height:46px}
+.chunks::-webkit-scrollbar{display:none}
+.chunk{
+  position:relative;flex:none;height:34px;padding:0 12px;border-radius:9px;
+  border:1px solid #2E1A0C;cursor:pointer;
+  background:linear-gradient(160deg,#8E4A22,#5E2C12 60%,#3F1C0A);
+  color:#FFE9D2;font-family:var(--body);font-weight:600;font-size:12.5px;
+  display:flex;align-items:center;gap:7px;white-space:nowrap;
+  box-shadow:0 6px 14px -10px #000, inset 0 1px 0 rgba(255,190,140,.22);
+  animation:thread .28s cubic-bezier(.2,1.5,.4,1);
+}
+@keyframes thread{from{transform:translateY(-16px) rotate(-7deg);opacity:0}to{transform:none;opacity:1}}
+.chunk::before,.chunk::after{
+  content:"";position:absolute;left:6px;right:6px;height:2px;border-radius:2px;
+  background:rgba(20,10,4,.42);pointer-events:none;
+}
+.chunk::before{top:9px}
+.chunk::after{bottom:9px}
+.chunk .n{font-family:var(--mono);font-size:10.5px;background:rgba(0,0,0,.42);padding:2px 5px;border-radius:4px}
+.chunk .x{opacity:.6;font-size:14px;line-height:1}
+.chunk:hover{filter:brightness(1.18)}
+.chunk:hover .x{opacity:1}
+.rod-empty{
+  position:relative;font-size:13.5px;color:var(--muted);padding-left:4px;
+  display:flex;align-items:center;height:46px;
+}
+.skewer-total{text-align:right;flex:none}
+.skewer-total .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.skewer-total .amt{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1.1}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--ash);padding:44px 0 56px;color:var(--muted);font-size:14px}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px}
+footer b{display:block;color:var(--cream);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px;font-weight:400}
+footer a{text-decoration:none;color:var(--cream);border-bottom:1px solid var(--ash)}
+footer a:hover{border-color:var(--ember)}
+
+.toast{
+  position:fixed;left:50%;bottom:150px;transform:translate(-50%,14px);
+  background:var(--kuli);color:var(--ink);font-weight:600;font-size:14px;
+  padding:11px 20px;border-radius:999px;z-index:60;
+  opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;
+}
+.toast[data-show="true"]{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:640px){
+  .hero-cta .btn{flex:1 1 100%}
+  .skewer-inner{gap:12px;padding-top:10px}
+  .skewer-total .amt{font-size:20px}
+  .masthead .open-now{display:none}
+  body{padding-bottom:124px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<header class="wrapper masthead">
+  <div class="mark">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <path d="M2 20 L24 6" stroke="#8E6134" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="5" y="11.5" width="7" height="7" rx="2" transform="rotate(-32 8.5 15)" fill="#F0531C"/>
+      <rect x="13" y="6.5" width="7" height="7" rx="2" transform="rotate(-32 16.5 10)" fill="#B01806"/>
+    </svg>
+    <div>
+      <b>Shuga Bistro</b>
+      <span>by Gracei</span>
+    </div>
+  </div>
+  <div class="open-now"><i class="dot"></i> Grill on · 4pm–midnight</div>
+</header>
+
+<section class="hero">
+  <div class="wrapper hero-inner">
+    <p class="eyebrow">Lagos wide · Charcoal grill · Bike delivery</p>
+    <h1>It should still be <em>smoking</em> when it reaches you.</h1>
+    <p class="lede">Beef, ram, chicken and kilishi, cut fresh and turned over open charcoal with our own yaji. Build your order below and it goes straight to the grill on WhatsApp.</p>
+    <div class="hero-facts">
+      <span>Ready in 25–35 min</span>
+      <span>Delivery from ₦2,000</span>
+      <span>Transfer, POS or cash</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#meat">Start your order</a>
+      <a class="btn ghost" href="#where">Check your area</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="step wrapper" id="meat">
+    <div class="step-head"><span class="step-num">01</span><h2>Pick your meat</h2></div>
+    <p class="step-note">Every portion comes wrapped with sliced onions, tomato and a sprinkle of extra yaji on the side.</p>
+    <div class="menu-grid" id="meatGrid"></div>
+  </section>
+
+  <section class="step wrapper" id="heat">
+    <div class="step-head"><span class="step-num">02</span><h2>Set your yaji</h2></div>
+    <p class="step-note">Yaji is our groundnut, ginger and pepper blend. Tell the mai suya how heavy-handed to be — this applies to the whole order.</p>
+    <div class="heat-row" id="heatRow" role="radiogroup" aria-label="Yaji heat level"></div>
+  </section>
+
+  <section class="step wrapper" id="extras">
+    <div class="step-head"><span class="step-num">03</span><h2>Sides and drinks</h2></div>
+    <p class="step-note">Tap to add. Tap again to take it off.</p>
+    <p class="eyebrow" style="margin-bottom:12px">Sides</p>
+    <div class="chip-row" id="sideRow"></div>
+    <p class="eyebrow" style="margin:26px 0 12px">Chilled drinks</p>
+    <div class="chip-row" id="drinkRow"></div>
+  </section>
+
+  <section class="step wrapper" id="where">
+    <div class="step-head"><span class="step-num">04</span><h2>Where and when</h2></div>
+    <p class="step-note">We deliver across Lagos, Island and Mainland. Timing depends on your area and how the road is moving, so we confirm a window on WhatsApp before you pay.</p>
+
+    <div class="toggle" role="group" aria-label="Delivery or pickup">
+      <button id="modeDelivery" aria-pressed="true">Deliver to me</button>
+      <button id="modePickup" aria-pressed="false">I'll pick up</button>
+    </div>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="fName">Your name</label>
+        <input id="fName" type="text" placeholder="Grace Okoro" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fPhone">Phone number</label>
+        <input id="fPhone" type="tel" placeholder="0803 000 0000" autocomplete="tel" inputmode="tel">
+      </div>
+      <div class="field" id="zoneField">
+        <label for="fZone">Delivery area</label>
+        <select id="fZone"></select>
+      </div>
+      <div class="field">
+        <label for="fWhen">When do you want it</label>
+        <select id="fWhen">
+          <option value="As soon as possible">As soon as possible</option>
+          <option value="In 1 hour">In 1 hour</option>
+          <option value="In 2 hours">In 2 hours</option>
+          <option value="Later tonight — I'll confirm the time">Later tonight, I'll confirm the time</option>
+        </select>
+      </div>
+      <div class="field full" id="addressField">
+        <label for="fAddress">Street address and landmark</label>
+        <input id="fAddress" type="text" placeholder="12 Aminu Kano Cres, opposite Sahad Stores" autocomplete="street-address">
+      </div>
+      <div class="field full">
+        <label for="fNotes">Anything else for the grill</label>
+        <textarea id="fNotes" placeholder="Cut it small, no onions on the ram, call when you reach the gate."></textarea>
+      </div>
+    </div>
+    <p class="hint" id="pickupHint" style="display:none">Pick up from the kitchen. We'll send you the location and a message when it's wrapped.</p>
+  </section>
+
+  <section class="step wrapper" id="send">
+    <div class="step-head"><span class="step-num">05</span><h2>Send it to the grill</h2></div>
+    <p class="step-note">Your order goes to us on WhatsApp. We reply with account details and a confirmed time.</p>
+
+    <div class="receipt" id="receipt"></div>
+
+    <div class="hero-cta" style="margin-top:22px">
+      <button class="btn wa" id="sendBtn" disabled>Send order on WhatsApp</button>
+      <button class="btn ghost" id="copyBtn">Copy order</button>
+    </div>
+    <p class="error" id="formError"></p>
+    <p class="pay-note">Pay by transfer once we confirm, or POS and cash on delivery. Nothing is charged on this page.</p>
+  </section>
+</main>
+
+<footer class="wrapper">
+  <div class="foot-grid">
+    <div>
+      <b>Find us</b>
+      Delivering across Lagos<br>Island and Mainland, 4pm till midnight
+    </div>
+    <div>
+      <b>Grill hours</b>
+      Monday to Saturday, 4pm–midnight<br>Sunday, 5pm–11pm
+    </div>
+    <div>
+      <b>Talk to us</b>
+      <a href="#" id="footWa">WhatsApp</a><br>
+      <a href="#">@suyabistrobygracei</a>
+    </div>
+    <div>
+      <b>Large orders</b>
+      Parties, offices and owambe trays, message us two days ahead.
+    </div>
+  </div>
+</footer>
+
+<div class="skewer-bar">
+  <div class="skewer-inner">
+    <div class="skewer-zone">
+      <p class="skewer-label">Your skewer</p>
+      <div class="rod"><div class="chunks" id="chunks"></div></div>
+    </div>
+    <div class="skewer-total">
+      <div class="lbl">Total</div>
+      <div class="amt" id="barTotal" aria-live="polite">₦0</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ------------------------------------------------------------------
+   CHANGE THIS to the real WhatsApp number, country code, no + or 0.
+   Nigerian 0803 000 0000  ->  2348030000000
+------------------------------------------------------------------- */
+const WHATSAPP_NUMBER = '2347080963421';
+
+const MENU = {
+  meat: [
+    { id:'beef',    name:'Beef Suya',        price:4000,  desc:'Thin-sliced round, the everyday wrap. Two skewers.', tag:'Most ordered' },
+    { id:'tozo',    name:'Tozo',             price:5500,  desc:'Cow hump, fatty and soft, grilled slow on the edge.' },
+    { id:'ram',     name:'Ram Suya',         price:6500,  desc:'Deep, gamey and rich. Comes off the grill last.' },
+    { id:'chicken', name:'Chicken Suya',     price:7000,  desc:'Half a bird, butterflied, yaji rubbed under the skin.' },
+    { id:'fullch',  name:'Full Chicken',     price:13000, desc:'Whole bird for the table, quartered before wrapping.' },
+    { id:'gizzard', name:'Gizzard Skewers',  price:4500,  desc:'Four skewers, charred hard at the edges.' },
+    { id:'fish',    name:'Croaker Suya',     price:8500,  desc:'Whole croaker, scored and grilled with pepper and oil.' },
+    { id:'ponmo',   name:'Ponmo Suya',       price:2500,  desc:'Soft cow skin, heavy on the yaji. Cheap and correct.' },
+    { id:'kilishi', name:'Kilishi, 100g',    price:5000,  desc:'Dried, spiced and sun-thinned. Travels well.', tag:'Takeaway' }
+  ],
+  sides: [
+    { id:'yaji',    name:'Extra yaji sachet', price:300 },
+    { id:'salad',   name:'Cabbage, onion & pepper', price:500 },
+    { id:'masa',    name:'Masa, 4 pieces',    price:1500 },
+    { id:'bread',   name:'Agege bread',       price:1000 },
+    { id:'plantain',name:'Fried plantain',    price:1200 }
+  ],
+  drinks: [
+    { id:'zobo',   name:'Chilled zobo',   price:1500 },
+    { id:'kunu',   name:'Kunu',           price:1500 },
+    { id:'soft',   name:'Soft drink',     price:900 },
+    { id:'water',  name:'Bottled water',  price:500 }
+  ]
+};
+
+const HEAT = [
+  { id:'mild',   name:'Small yaji',       pips:1, desc:'A light dusting. Good for children.' },
+  { id:'medium', name:'Normal',           pips:2, desc:'How we serve it if you say nothing.' },
+  { id:'hot',    name:'Plenty pepper',    pips:3, desc:'Heavy hand. You will feel it.' },
+  { id:'special',name:'Mai suya special', pips:4, desc:'Double yaji and fresh scotch bonnet on top.' }
+];
+
+const ZONES = [
+  { id:'island',   name:'Victoria Island, Ikoyi, Lagos Island, Obalende', fee:2000 },
+  { id:'lekki',    name:'Lekki, Ikate, Agungi, Osapa, Chevron', fee:2500 },
+  { id:'ajah',     name:'Ajah, Sangotedo, Abraham Adesanya, Awoyaya', fee:3000 },
+  { id:'central',  name:'Yaba, Surulere, Ebute Metta, Apapa', fee:2500 },
+  { id:'ikeja',    name:'Ikeja, Maryland, Gbagada, Magodo, Ogudu', fee:3000 },
+  { id:'westside', name:'Festac, Amuwo, Isolo, Ikotun, Okota', fee:4000 },
+  { id:'outer',    name:'Ikorodu, Agege, Ipaja, Egbeda, Alimosho', fee:4500 },
+  { id:'other',    name:'Somewhere else in Lagos — we will quote you', fee:0 }
+];
+
+const ALL = [...MENU.meat, ...MENU.sides, ...MENU.drinks];
+const find = id => ALL.find(i => i.id === id);
+const naira = n => '₦' + n.toLocaleString('en-NG');
+
+const state = { items:{}, heat:'medium', mode:'delivery', zone:'island' };
+
+/* ---------- render menu ---------- */
+const meatGrid = document.getElementById('meatGrid');
+meatGrid.innerHTML = MENU.meat.map(i => `
+  <article class="card">
+    ${i.tag ? `<span class="tag">${i.tag}</span>` : ''}
+    <h3>${i.name}</h3>
+    <p class="desc">${i.desc}</p>
+    <div class="card-foot">
+      <div class="price">${naira(i.price)}<small>per portion</small></div>
+      <div data-control="${i.id}"></div>
+    </div>
+  </article>`).join('');
+
+function controlFor(id){
+  const n = state.items[id] || 0;
+  if (!n) return `<button class="add-btn" data-add="${id}">Add</button>`;
+  return `<div class="stepper">
+      <button data-dec="${id}" aria-label="Remove one ${find(id).name}">−</button>
+      <span class="qty">${n}</span>
+      <button data-inc="${id}" aria-label="Add one ${find(id).name}">+</button>
+    </div>`;
+}
+function paintControls(){
+  document.querySelectorAll('[data-control]').forEach(el => {
+    el.innerHTML = controlFor(el.dataset.control);
+  });
+}
+
+function chipRow(list){
+  return list.map(i => `
+    <button class="chip" data-toggle="${i.id}" data-on="${!!state.items[i.id]}">
+      ${i.name} <span class="c-price">${naira(i.price)}</span>
+      <span class="c-add">${state.items[i.id] ? state.items[i.id] : '+'}</span>
+    </button>`).join('');
+}
+function paintChips(){
+  document.getElementById('sideRow').innerHTML = chipRow(MENU.sides);
+  document.getElementById('drinkRow').innerHTML = chipRow(MENU.drinks);
+}
+
+document.getElementById('heatRow').innerHTML = HEAT.map(h => `
+  <button class="heat" role="radio" data-heat="${h.id}" aria-checked="${state.heat===h.id}">
+    <div class="pips">${[1,2,3,4].map(n => `<i class="${n<=h.pips?'on':''}"></i>`).join('')}</div>
+    <b>${h.name}</b><small>${h.desc}</small>
+  </button>`).join('');
+
+const zoneSel = document.getElementById('fZone');
+zoneSel.innerHTML = ZONES.map(z => `<option value="${z.id}">${z.name}${z.fee ? ' — ' + naira(z.fee) : ''}</option>`).join('');
+
+/* ---------- cart maths ---------- */
+const lines = () => Object.entries(state.items)
+  .filter(([,n]) => n > 0)
+  .map(([id,n]) => ({ ...find(id), n, sum: find(id).price * n }));
+const subtotal = () => lines().reduce((t,l) => t + l.sum, 0);
+const fee = () => state.mode === 'pickup' ? 0 : (ZONES.find(z => z.id === state.zone)?.fee || 0);
+const total = () => subtotal() + (subtotal() ? fee() : 0);
+
+/* ---------- the skewer ---------- */
+function paintSkewer(){
+  const box = document.getElementById('chunks');
+  const l = lines();
+  if (!l.length){
+    box.innerHTML = '<span class="rod-empty">Nothing on the skewer yet. Pick your meat above.</span>';
+  } else {
+    box.innerHTML = l.map(x => `
+      <button class="chunk" data-remove="${x.id}" title="Remove ${x.name}">
+        ${x.name}${x.n > 1 ? `<span class="n">×${x.n}</span>` : ''}<span class="x">×</span>
+      </button>`).join('');
+  }
+  document.getElementById('barTotal').textContent = naira(total());
+}
+
+/* ---------- receipt ---------- */
+function paintReceipt(){
+  const box = document.getElementById('receipt');
+  const l = lines();
+  if (!l.length){
+    box.innerHTML = '<h3>Your order</h3><p class="r-empty">Empty for now. Add something from the grill and it will show up here.</p>';
+    return;
+  }
+  const heat = HEAT.find(h => h.id === state.heat).name;
+  const zone = ZONES.find(z => z.id === state.zone);
+  const place = state.mode === 'pickup'
+    ? { label:'Pickup from the kitchen', val:'₦0' }
+    : { label:'Delivery — ' + zone.name, val: zone.fee ? naira(zone.fee) : 'We will quote' };
+  box.innerHTML = `<h3>Your order</h3>` +
+    l.map(x => `<div class="r-line"><span>${x.n} × ${x.name}</span><span>${naira(x.sum)}</span></div>`).join('') +
+    `<div class="r-line"><span>Yaji level</span><span>${heat}</span></div>` +
+    `<div class="r-line"><span>${place.label}</span><span>${place.val}</span></div>` +
+    `<div class="r-total"><span>Total</span><span>${naira(total())}</span></div>`;
+}
+
+function refresh(){
+  paintControls(); paintChips(); paintSkewer(); paintReceipt(); validate(false);
+}
+
+/* ---------- interactions ---------- */
+function bump(id, delta){
+  const n = (state.items[id] || 0) + delta;
+  if (n <= 0) delete state.items[id]; else state.items[id] = n;
+  refresh();
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-add],[data-inc],[data-dec],[data-toggle],[data-remove],[data-heat]');
+  if (!t) return;
+  if (t.dataset.add) bump(t.dataset.add, 1);
+  else if (t.dataset.inc) bump(t.dataset.inc, 1);
+  else if (t.dataset.dec) bump(t.dataset.dec, -1);
+  else if (t.dataset.remove){ delete state.items[t.dataset.remove]; refresh(); }
+  else if (t.dataset.toggle){
+    const id = t.dataset.toggle;
+    if (state.items[id]) delete state.items[id]; else state.items[id] = 1;
+    refresh();
+  }
+  else if (t.dataset.heat){
+    state.heat = t.dataset.heat;
+    document.querySelectorAll('[data-heat]').forEach(b => b.setAttribute('aria-checked', b.dataset.heat === state.heat));
+    paintReceipt();
+  }
+});
+
+const dBtn = document.getElementById('modeDelivery');
+const pBtn = document.getElementById('modePickup');
+function setMode(mode){
+  state.mode = mode;
+  dBtn.setAttribute('aria-pressed', mode === 'delivery');
+  pBtn.setAttribute('aria-pressed', mode === 'pickup');
+  document.getElementById('zoneField').style.display = mode === 'delivery' ? '' : 'none';
+  document.getElementById('addressField').style.display = mode === 'delivery' ? '' : 'none';
+  document.getElementById('pickupHint').style.display = mode === 'pickup' ? '' : 'none';
+  paintSkewer(); paintReceipt(); validate(false);
+}
+dBtn.onclick = () => setMode('delivery');
+pBtn.onclick = () => setMode('pickup');
+
+zoneSel.onchange = () => { state.zone = zoneSel.value; paintSkewer(); paintReceipt(); };
+
+['fName','fPhone','fAddress'].forEach(id =>
+  document.getElementById(id).addEventListener('input', () => validate(false))
+);
+
+/* ---------- validation ---------- */
+const errEl = document.getElementById('formError');
+const sendBtn = document.getElementById('sendBtn');
+
+function problems(){
+  const p = [];
+  if (!lines().length) p.push('add at least one thing from the grill');
+  if (!document.getElementById('fName').value.trim()) p.push('put your name');
+  const phone = document.getElementById('fPhone').value.replace(/\D/g,'');
+  if (phone.length < 10) p.push('put a phone number we can call');
+  if (state.mode === 'delivery' && !document.getElementById('fAddress').value.trim()) p.push('give us the address');
+  return p;
+}
+function validate(show){
+  const p = problems();
+  sendBtn.disabled = p.length > 0;
+  if (show && p.length){
+    errEl.textContent = 'Before we can send it: ' + p.join(', ') + '.';
+    errEl.dataset.show = 'true';
+  } else {
+    errEl.dataset.show = 'false';
+  }
+  return p.length === 0;
+}
+
+/* ---------- message ---------- */
+function orderText(){
+  const l = lines();
+  const heat = HEAT.find(h => h.id === state.heat).name;
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const when = document.getElementById('fWhen').value;
+  const notes = document.getElementById('fNotes').value.trim();
+  const addr = document.getElementById('fAddress').value.trim();
+
+  let t = '*New order — Shuga Bistro by Gracei*\n\n';
+  l.forEach(x => { t += `${x.n} × ${x.name} — ${naira(x.sum)}\n`; });
+  t += `\nYaji: ${heat}\n`;
+  const zone = ZONES.find(z => z.id === state.zone);
+  t += state.mode === 'pickup'
+    ? 'Pickup from the kitchen\n'
+    : `Delivery: ${zone.name} — ${zone.fee ? naira(zone.fee) : 'fee to be confirmed'}\n${addr}\n`;
+  t += `\nSubtotal: ${naira(subtotal())}\n`;
+  if (state.mode === 'delivery' && zone.fee) t += `Delivery: ${naira(zone.fee)}\n`;
+  t += `*Total: ${naira(total())}*${state.mode === 'delivery' && !zone.fee ? ' (before delivery)' : ''}\n\n`;
+  t += `Name: ${name}\nPhone: ${phone}\nWhen: ${when}\n`;
+  if (notes) t += `Notes: ${notes}\n`;
+  return t;
+}
+
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.dataset.show = 'true';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.dataset.show = 'false', 2600);
+}
+
+sendBtn.onclick = () => {
+  if (!validate(true)) return;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderText())}`, '_blank');
+};
+
+document.getElementById('copyBtn').onclick = async () => {
+  if (!lines().length){ validate(true); return; }
+  const text = orderText();
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('Order copied');
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    toast('Order copied');
+  }
+};
+
+document.getElementById('footWa').href = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+setMode('delivery');
+refresh();
+</script>
